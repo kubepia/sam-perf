@@ -6,5 +6,8 @@
 		{
 			"path": "static-springboot"
 		}
-	]
+	],
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "automatic"
+	}
 }

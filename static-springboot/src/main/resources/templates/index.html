@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <p th:text="'Welcome, ' + ${title} + '!'" />
+    
+    <ul>
+        <th:block th:each="num : ${#numbers.sequence(1,count)}">
+            <li>
+                <img th:src="@{images/{imgnum}.jpg(imgnum=${num})}"/>
+            </li>
+        </th:block>
+    </ul>
+</body>
+</html>
+
