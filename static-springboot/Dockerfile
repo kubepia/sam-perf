@@ -2,7 +2,7 @@ FROM maven:3.6.2-jdk-8 AS build
 
 RUN mkdir /app
 
-COPY ./src /app
+COPY ./src /app/
 COPY ./.classpath /app/
 COPY pom.xml /app
 WORKDIR /app
