@@ -5,6 +5,9 @@ RUN mkdir /app
 COPY . /app
 # COPY pom.xml /usr/src/app
 WORKDIR /app
+
+RUN pwd
+
 RUN mvn clean package -DskipTest
 
 FROM openjdk:8-jdk-alpine
