@@ -2,11 +2,9 @@ FROM maven:3.6.2-jdk-8 AS build
 
 RUN mkdir /app
 
-COPY ./src /app/
-COPY ./.classpath /app/
-COPY pom.xml /app
+COPY . /app/
 WORKDIR /app
-RUN ls -al
+RUN ls -alh
 RUN mvn clean package -DskipTest
 
 FROM openjdk:8-jdk-alpine

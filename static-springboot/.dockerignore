@@ -1,2 +1,11 @@
 target
 Dockerfile
+.gitignore
+.mvn
+.vscode
+.settings
+.project
+HELP.md
+mvnw
+mvnw.cmd
+.dockerignore
