@@ -2,12 +2,9 @@ FROM maven:3.6.2-jdk-8 AS build
 
 RUN mkdir /app
 
-COPY . /app
-# COPY pom.xml /usr/src/app
+COPY ./src /app
+COPY pom.xml /app
 WORKDIR /app
-
-RUN pwd
-RUN ls -al
 
 RUN mvn -f /app/pom.xml clean package -DskipTest
 
