@@ -7,8 +7,9 @@ COPY . /app
 WORKDIR /app
 
 RUN pwd
+RUN ls -al
 
-RUN mvn clean package -DskipTest
+RUN mvn -f /app/pom.xml clean package -DskipTest
 
 FROM openjdk:8-jdk-alpine
 VOLUME /tmp
