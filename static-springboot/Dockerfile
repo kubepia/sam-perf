@@ -4,13 +4,11 @@ RUN mkdir /app
 
 COPY . /app/
 WORKDIR /app
-RUN ls -alh
+
 RUN mvn clean package -DskipTest
 
 FROM openjdk:8-jdk-alpine
 VOLUME /tmp
-
-FROM openjdk:8-jdk-alpine
 
 RUN mkdir /app
 COPY --from=build /app/target/*.jar /app/app.jar
