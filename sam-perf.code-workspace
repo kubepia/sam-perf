@@ -1,13 +1,16 @@
 {
 	"folders": [
 		{
-			"path": "static-node"
-		},
-		{
-			"path": "static-springboot"
-		},
-		{
 			"path": "kustomize"
+		},
+		{
+			"path": "doc"
+		},
+		{
+			"path": "nodejs"
+		},
+		{
+			"path": "springboot"
 		}
 	],
 	"settings": {
