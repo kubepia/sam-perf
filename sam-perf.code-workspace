@@ -7,10 +7,10 @@
 			"path": "doc"
 		},
 		{
-			"path": "nodejs"
+			"path": "perf-nodejs"
 		},
 		{
-			"path": "springboot"
+			"path": "perf-springboot"
 		}
 	],
 	"settings": {
