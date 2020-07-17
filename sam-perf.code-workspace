@@ -11,6 +11,9 @@
 		},
 		{
 			"path": "perf-springboot"
+		},
+		{
+			"path": "perf-nginx"
 		}
 	],
 	"settings": {
