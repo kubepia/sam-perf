@@ -1,0 +1,32 @@
+
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: apps-nodejs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apps-nodejs
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      name: apps-nodejs
+      labels:
+        app: apps-nodejs
+    spec:
+      containers:
+      - name: apps-nodejs
+        image: docker.io/kubepia/perf-nodejs:latest
+        imagePullPolicy: Always
+        ports:
+        - name: http
+          containerPort: 3000
+        resources:
+          requests:
+            cpu: 300m
+            memory: 300Mi
+          limits:
+            cpu: 500m
+            memory: 500Mi

@@ -1,0 +1,32 @@
+
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: apps-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apps-nginx
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      name: apps-nginx
+      labels:
+        app: apps-nginx
+    spec:
+      containers:
+      - name: apps-nginx
+        image: docker.io/kubepia/perf-nginx:latest
+        imagePullPolicy: Always
+        ports:
+        - name: http
+          containerPort: 8080
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits:
+            cpu: 300m
+            memory: 300Mi

@@ -1,0 +1,11 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: apps-spring
+spec:
+  host: apps-spring.apps.cp4a.kubepia.net
+  to:
+    kind: Service
+    name: apps-spring
+  port:
+    targetPort: http

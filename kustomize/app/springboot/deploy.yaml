@@ -1,0 +1,32 @@
+
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: apps-spring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apps-spring
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      name: apps-spring
+      labels:
+        app: apps-spring
+    spec:
+      containers:
+      - name: apps-spring
+        image: docker.io/kubepia/perf-springboot:latest
+        imagePullPolicy: Always
+        ports:
+        - name: http
+          containerPort: 8080
+        # resources:
+        #   requests:
+        #     cpu: 300m
+        #     memory: 300Mi
+        #   limits:
+        #     cpu: 500m
+        #     memory: 500Mi

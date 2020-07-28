@@ -1,0 +1,24 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: apps
+
+resources:
+  - route.yaml
+  - service.yaml
+  - deploy.yaml
+
+
+
+# patchesJson6902:
+#   - target:
+#       version: apps/v1
+#       kind: Deployment 
+#       name: apps
+#     patch: |-
+#       - op: replace
+#         path: /spec/template/spec/containers/0/ports/0/containerPort
+#         value: 8080
+    
+
+

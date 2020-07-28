@@ -1,0 +1,11 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: apps-nodejs
+spec:
+  host: apps-nodejs.apps.cp4a.kubepia.net
+  to:
+    kind: Service
+    name: apps-nodejs
+  port:
+    targetPort: http

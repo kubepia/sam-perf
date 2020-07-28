@@ -1,0 +1,11 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: apps-nginx
+spec:
+  host: apps-nginx.apps.cp4a.kubepia.net
+  to:
+    kind: Service
+    name: apps-nginx
+  port:
+    targetPort: http
